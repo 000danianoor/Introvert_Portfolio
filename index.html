@@ -30,6 +30,8 @@
       };
     </script>
     <style>
+      /* ✅ Ensure container alignment */
+
       * {
         margin: 0;
         padding: 0;
@@ -37,9 +39,22 @@
       }
       body {
         font-family: "Manrope", sans-serif;
+        font-size: 16px; /* Base font size */
+        line-height: 1.6;
         background: #ffffff;
         color: #1a1a1a;
         overflow-x: hidden;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto; /* Center align */
+        padding: 0 20px; /* Left-right spacing */
       }
 
       .glass {
@@ -404,67 +419,78 @@
         box-shadow: 0 20px 50px rgba(0, 46, 21, 0.06);
         border-color: rgba(0, 46, 21, 0.15);
       }
+      .container,
+      * {
+        margin: 0;
+        padding: 0;
+      }
     </style>
   </head>
   <body>
     <div class="noise"></div>
 
-    <!-- ==================== NAVBAR ==================== -->
-    <nav
-      id="navbar"
-      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-      style="background: #002e15"
+ <!-- ==================== NAVBAR ==================== -->
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 bg-[#002e15]/95 backdrop-blur-md border-b border-white/10 transition-all duration-300"
+>
+
+  <div
+    class="max-w-6xl mx-auto px-5 sm:px-8 h-14 flex items-center justify-between"
+  >
+
+    <!-- Logo -->
+    <a
+      href="#hero"
+      class="font-display text-base sm:text-lg font-bold tracking-tight flex items-center gap-1.5 text-white"
     >
-      <div
-        class="max-w-6xl mx-auto px-5 sm:px-8 py-2 flex items-center justify-between"
-      >
-        <a
-          href="#hero"
-          class="font-display text-lg font-bold tracking-tight flex items-center gap-1.5 text-white"
-        >
-          <i data-lucide="code-2" class="w-5 h-5 text-white"></i>
-          Introvert <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
-        </a>
+      <i data-lucide="code-2" class="w-5 h-5 text-white"></i>
+      Introvert
+      <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
+    </a>
 
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            href="#hero"
-            class="nav-link mx-2 text-xs text-white font-semibold uppercase tracking-wider"
-            >Home</a
-          >
-          <a
-            href="#about"
-            class="nav-link mx-2 text-xs text-white font-semibold uppercase tracking-wider"
-            >About</a
-          >
-          <a
-            href="#skills"
-            class="nav-link mx-2 text-xs text-white font-semibold uppercase tracking-wider"
-            >Skills</a
-          >
-          <a
-            href="#projects"
-            class="nav-link mx-2 text-xs text-white font-semibold uppercase tracking-wider"
-            >Projects</a
-          >
-          <a
-            href="#experience"
-            class="nav-link mx-2 text-xs text-white font-semibold uppercase tracking-wider"
-            >Journey</a
-          >
-          <a
-            href="#contact"
-            class="nav-link mx-2 text-xs text-white font-semibold uppercase tracking-wider"
-            >Contact</a
-          >
-        </div>
+    <!-- Links -->
+    <div class="hidden md:flex items-center gap-8">
 
-        <button id="menuBtn" class="md:hidden text-white p-1.5">
-          <i data-lucide="menu" class="w-5 h-5"></i>
-        </button>
-      </div>
-    </nav>
+      <a href="#hero"
+        class="text-base sm:text-[15px] text-[#ffffff] hover:opacity-80 font-semibold uppercase tracking-wider transition">
+        Home
+      </a>
 
+      <a href="#about"
+        class="text-base sm:text-[15px] text-[#ffffff] hover:opacity-80 font-semibold uppercase tracking-wider transition">
+        About
+      </a>
+
+      <a href="#skills"
+        class="text-base sm:text-[15px] text-[#ffffff] hover:opacity-80 font-semibold uppercase tracking-wider transition">
+        Skills
+      </a>
+
+      <a href="#projects"
+        class="text-base sm:text-[15px] text-[#ffffff] hover:opacity-80 font-semibold uppercase tracking-wider transition">
+        Projects
+      </a>
+
+      <a href="#experience"
+        class="text-base sm:text-[15px] text-[#ffffff] hover:opacity-80 font-semibold uppercase tracking-wider transition">
+        Journey
+      </a>
+
+      <a href="#contact"
+        class="text-base sm:text-[15px] text-[#ffffff] hover:opacity-80 font-semibold uppercase tracking-wider transition">
+        Contact
+      </a>
+
+    </div>
+
+    <!-- Mobile Button -->
+    <button id="menuBtn" class="md:hidden text-white p-1">
+      <i data-lucide="menu" class="w-5 h-5"></i>
+    </button>
+
+  </div>
+</nav>
     <!-- ==================== HERO ==================== -->
     <section
       id="hero"
@@ -710,147 +736,162 @@
     </section>
     <hr />
     <!-- ==================== ABOUT ==================== -->
-    <section id="about" class="relative overflow-hidden py-10">
-      <div class="container mx-auto px-5 sm:px-8 relative z-10">
-        <!-- Centered Heading -->
+    <!-- ==================== ABOUT ==================== -->
+<section id="about" class="relative overflow-hidden py-10">
+
+  <div class="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
+
+    <!-- Centered Heading -->
+    <h2
+      class="text-3xl sm:text-4xl font-bold text-center text-[#002e15] mb-14"
+    >
+      About <span class="text-gradient"> Me </span>
+    </h2>
+
+    <div class="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+
+      <!-- Left Content -->
+      <div class="lg:col-span-3">
+
         <h2
-          class="text-3xl sm:text-4xl font-bold text-center text-[#002e15] mb-14"
+          class="font-display text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight leading-snug mb-6 text-[#002e15]"
         >
-          About Me
+          Quiet mind, <span class="text-gradient">loud code.</span>
         </h2>
 
-        <div class="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
-          <!-- Left Content -->
-          <div class="lg:col-span-3">
-            <h2
-              class="font-display text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight leading-snug mb-6 text-[#002e15]"
-            >
-              Quiet mind, <span class="text-gradient">loud code.</span>
-            </h2>
+        <p
+          class="text-sm sm:text-base text-[#002e15] font-medium leading-relaxed mb-8"
+        >
+          I'm
+          <span class="text-[#002e15] font-bold">Dania Noor</span> — a
+          Full-Stack Developer and UI/UX Designer who lets the work speak. I
+          believe in clean architecture, pixel-perfect design, and code that
+          others actually enjoy reading.
+        </p>
 
-            <p
-              class="text-sm sm:text-base text-[#002e15] font-medium leading-relaxed mb-8"
-            >
-              I'm
-              <span class="text-[#002e15] font-bold">Dania Noor</span> — a
-              Full-Stack Developer and UI/UX Designer who lets the work speak. I
-              believe in clean architecture, pixel-perfect design, and code that
-              others actually enjoy reading.
-            </p>
-            <p
-              class="text-sm sm:text-base text-[#002e15] font-medium leading-relaxed mb-8"
-            >
-              Based in Pakistan, I've spent 3+ years turning complex problems
-              into elegant solutions for startups, agencies, and clients
-              worldwide. I don't talk much — I build.
-            </p>
+        <p
+          class="text-sm sm:text-base text-[#002e15] font-medium leading-relaxed mb-8"
+        >
+          Based in Pakistan, I've spent 3+ years turning complex problems
+          into elegant solutions for startups, agencies, and clients
+          worldwide. I don't talk much — I build.
+        </p>
 
-            <div class="flex flex-wrap gap-2 mb-8">
-              <span
-                class="skill-chip px-4 py-2 rounded-full text-xs text-[#002e15] font-bold border-2 border-[#002e15]"
-              >
-                🎨 Designer
-              </span>
+        <!-- Skills -->
+        <div class="flex flex-wrap gap-2 mb-8">
 
-              <span
-                class="skill-chip px-4 py-2 rounded-full text-xs text-[#002e15] font-bold border-2 border-[#002e15]"
-              >
-                💻 Developer
-              </span>
+          <span
+            class="skill-chip px-4 py-2 rounded-full text-xs text-[#002e15] font-bold border-2 border-[#002e15]"
+          >
+            🎨 Designer
+          </span>
 
-              <span
-                class="skill-chip px-4 py-2 rounded-full text-xs text-[#002e15] font-bold border-2 border-[#002e15]"
-              >
-                🚀 Freelancer
-              </span>
+          <span
+            class="skill-chip px-4 py-2 rounded-full text-xs text-[#002e15] font-bold border-2 border-[#002e15]"
+          >
+            💻 Developer
+          </span>
 
-              <span
-                class="skill-chip px-4 py-2 rounded-full text-xs text-[#002e15] font-bold border-2 border-[#002e15]"
-              >
-                🧠 Thinker
-              </span>
-            </div>
+          <span
+            class="skill-chip px-4 py-2 rounded-full text-xs text-[#002e15] font-bold border-2 border-[#002e15]"
+          >
+            🚀 Freelancer
+          </span>
 
-            <a
-              href="#"
-              class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#002e15] text-white"
-            >
-              Download CV
-              <i data-lucide="download" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
+          <span
+            class="skill-chip px-4 py-2 rounded-full text-xs text-[#002e15] font-bold border-2 border-[#002e15]"
+          >
+            🧠 Thinker
+          </span>
 
-          <!-- Right Cards -->
-          <div class="lg:col-span-2 space-y-4">
-            <!-- Location -->
-            <div class="rounded-xl p-5 bg-[#002e15] shadow-lg">
-              <div class="flex items-center gap-3.5">
-                <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
-                <div>
-                  <p class="text-[10px] text-white/70 uppercase tracking-wider">
-                    Location
-                  </p>
-                  <p class="text-sm text-white font-medium">
-                    Chakwal, Pakistan
-                  </p>
-                </div>
-              </div>
-            </div>
+        </div>
 
-            <!-- Education -->
-            <div class="rounded-xl p-5 bg-[#002e15] shadow-lg">
-              <div class="flex items-center gap-3.5">
-                <i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i>
-                <div>
-                  <p class="text-[10px] text-white/70 uppercase tracking-wider">
-                    Education
-                  </p>
-                  <p class="text-sm text-white font-medium">
-                    BS Computer Science
-                  </p>
-                  <p class="text-xs text-white/70">
-                    Virtural University of Pakistan
-                  </p>
-                </div>
-              </div>
-            </div>
+        <!-- CTA Button -->
+        <a
+          href="#"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#002e15] text-white"
+        >
+          Download CV
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+        </a>
 
-            <!-- Languages -->
-            <div class="rounded-xl p-5 bg-[#002e15] shadow-lg">
-              <div class="flex items-center gap-3.5">
-                <i data-lucide="languages" class="w-5 h-5 text-white"></i>
-                <div>
-                  <p class="text-[10px] text-white/70 uppercase tracking-wider">
-                    Languages
-                  </p>
-                  <p class="text-sm text-white font-medium">
-                    English, Urdu, Punjabi
-                  </p>
-                </div>
-              </div>
-            </div>
+      </div>
 
-            <!-- Interests -->
-            <div class="rounded-xl p-5 bg-[#002e15] shadow-lg">
-              <div class="flex items-center gap-3.5">
-                <i data-lucide="heart" class="w-5 h-5 text-white"></i>
-                <div>
-                  <p class="text-[10px] text-white/70 uppercase tracking-wider">
-                    Interests
-                  </p>
-                  <p class="text-sm text-white font-medium">
-                    Coding, Design, Gaming, Music
-                  </p>
-                </div>
-              </div>
+      <!-- Right Cards -->
+      <div class="lg:col-span-2 space-y-4">
+
+        <!-- Location -->
+        <div class="rounded-xl p-5 bg-[#002e15] shadow-lg">
+          <div class="flex items-center gap-3.5">
+            <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
+            <div>
+              <p class="text-[10px] text-white/70 uppercase tracking-wider">
+                Location
+              </p>
+              <p class="text-sm text-white font-medium">
+                Chakwal, Pakistan
+              </p>
             </div>
           </div>
         </div>
+
+        <!-- Education -->
+        <div class="rounded-xl p-5 bg-[#002e15] shadow-lg">
+          <div class="flex items-center gap-3.5">
+            <i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i>
+            <div>
+              <p class="text-[10px] text-white/70 uppercase tracking-wider">
+                Education
+              </p>
+              <p class="text-sm text-white font-medium">
+                BS Computer Science
+              </p>
+              <p class="text-xs text-white/70">
+                Virtual University of Pakistan
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="rounded-xl p-5 bg-[#002e15] shadow-lg">
+          <div class="flex items-center gap-3.5">
+            <i data-lucide="languages" class="w-5 h-5 text-white"></i>
+            <div>
+              <p class="text-[10px] text-white/70 uppercase tracking-wider">
+                Languages
+              </p>
+              <p class="text-sm text-white font-medium">
+                English, Urdu, Punjabi
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="rounded-xl p-5 bg-[#002e15] shadow-lg">
+          <div class="flex items-center gap-3.5">
+            <i data-lucide="heart" class="w-5 h-5 text-white"></i>
+            <div>
+              <p class="text-[10px] text-white/70 uppercase tracking-wider">
+                Interests
+              </p>
+              <p class="text-sm text-white font-medium">
+                Coding, Design, Gaming, Music
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
 
-    <div class="divider max-w-6xl mx-auto"></div>
+    </div>
 
+  </div>
+
+</section>
+
+<div class="divider max-w-6xl mx-auto"></div>
     <!-- ==================== SKILLS ==================== -->
     <section id="skills" class="py-5 relative overflow-hidden">
       <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
@@ -858,7 +899,7 @@
         <h2
           class="text-3xl sm:text-4xl font-bold text-center text-[#002e15] mb-14"
         >
-          Skills & Tools
+          Skills & <span class="text-gradient">Tools</span>
         </h2>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -989,42 +1030,21 @@
     </section>
 
     <div class="divider max-w-6xl mx-auto"></div>
+    <hr />
     <!-- ==================== PROJECTS ==================== -->
-    <section id="projects" class="py-20 sm:py-28 relative overflow-hidden">
-      <div
-        class="orb orb-1 w-60 h-60 bg-[#002e15]/[0.015] top-[20%] right-[-6%]"
-      ></div>
+    <section id="projects" class="sm:py-10 relative overflow-hidden">
       <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
-        <div class="flex items-center gap-3 mb-12 proj-el">
-          <span
-            class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#002e15]/35"
-            >03</span
-          >
-          <div
-            class="h-px w-12 bg-gradient-to-r from-[#002e15]/15 to-transparent"
-          ></div>
-          <span
-            class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#002e15]/22"
-            >Selected Work</span
-          >
-        </div>
-        <div
-          class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 proj-el"
+        <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#002e15]">
+          Featured <span class="text-gradient">Projects</span>
+        </h2>
+        <a
+          href="https://github.com/"
+          target="_blank"
+          class="btn-ghost mb-3 inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 rounded-full text-xs sm:text-sm font-medium uppercase tracking-wider border-2 border-[#002e15] text-[#002e15] hover:bg-[#002e15] hover:text-white transition-all duration-300"
         >
-          <h2
-            class="font-display text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight leading-snug text-[#002e15]"
-          >
-            Featured <span class="text-gradient">projects</span>
-          </h2>
-          <a
-            href="https://github.com/"
-            target="_blank"
-            class="btn-ghost inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-medium uppercase tracking-wider"
-          >
-            All on GitHub
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
+          All on GitHub
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
 
         <div class="grid sm:grid-cols-2 gap-5">
           <a
@@ -1209,24 +1229,15 @@
     <div class="divider max-w-6xl mx-auto"></div>
 
     <!-- ==================== EXPERIENCE ==================== -->
-    <section id="experience" class="py-20 sm:py-28 relative overflow-hidden">
+    <section id="experience" class="py-20 sm:py-5 relative overflow-hidden">
       <div
         class="orb orb-1 w-52 h-52 bg-[#002e15]/[0.015] top-[50%] left-[-6%]"
       ></div>
       <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
-        <div class="flex items-center gap-3 mb-12 exp-el">
-          <span
-            class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#002e15]/35"
-            >04</span
-          >
-          <div
-            class="h-px w-12 bg-gradient-to-r from-[#002e15]/15 to-transparent"
-          ></div>
-          <span
-            class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#002e15]/22"
-            >Journey</span
-          >
-        </div>
+        <div class="flex items-center gap-3 mb-12 exp-el"></div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#002e15]">
+          My <span class="text-gradient">Journey / Experiences </span>
+        </h2>
         <h2
           class="font-display text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight leading-snug mb-14 exp-el text-[#002e15]"
         >
@@ -1322,243 +1333,299 @@
     <div class="divider max-w-6xl mx-auto"></div>
 
     <!-- ==================== CONTACT (Details Only) ==================== -->
-    <section id="contact" class="py-20 sm:py-28 relative overflow-hidden">
+    <section id="contact" class="py-10 relative overflow-hidden">
       <div
         class="orb orb-2 w-96 h-96 bg-[#002e15]/[0.015] -bottom-[20%] left-[15%]"
       ></div>
-      <div class="grid-lines opacity-25"></div>
-      <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
-        <div class="flex items-center gap-3 mb-12 cont-el">
-          <span
-            class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#002e15]/35"
-            >05</span
-          >
-          <div
-            class="h-px w-12 bg-gradient-to-r from-[#002e15]/15 to-transparent"
-          ></div>
-          <span
-            class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#002e15]/22"
-            >Contact</span
-          >
-        </div>
 
-        <div class="grid md:grid-cols-2 gap-12 items-start">
-          <!-- Left -->
-          <div class="cont-el">
+      <div class="grid-lines opacity-25"></div>
+
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
+        <!-- Heading -->
+        <h2
+          class="text-3xl sm:text-4xl font-bold text-center text-[#002e15] mb-14"
+        >
+          Contact <span class="text-gradient">Us</span>
+        </h2>
+
+        <div class="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+          <!-- Left Content -->
+          <div class="lg:col-span-3 cont-el">
             <h2
-              class="font-display text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight leading-snug mb-5 text-[#002e15]"
+              class="font-display text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight leading-snug mb-6 text-[#002e15]"
             >
               Let's build <span class="text-gradient">something.</span>
             </h2>
+
             <p
-              class="text-sm sm:text-base text-[#002e15]/40 font-light leading-relaxed mb-10"
+              class="text-sm sm:text-base text-[#002e15] font-medium leading-relaxed mb-8"
             >
               Got an idea? Drop me a message. No small talk needed — just the
-              brief.
+              brief. Whether it's a website, web application, UI/UX design, or
+              freelance collaboration, I'm always open to discussing meaningful
+              projects.
             </p>
 
-            <div class="flex items-center gap-3 mb-10">
+            <!-- Social Links -->
+            <div class="flex flex-wrap gap-3 mb-8">
               <a
                 href="https://github.com/"
                 target="_blank"
-                class="w-10 h-10 rounded-xl glass-light flex items-center justify-center text-[#002e15]/20 hover:text-[#002e15] hover:bg-[#002e15]/[0.06] hover:border-[#002e15]/12 transition-all duration-300 bg-white/60"
-                ><i data-lucide="github" class="w-4 h-4"></i
-              ></a>
+                class="w-10 h-10 rounded-xl bg-[#002e15] flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+
               <a
                 href="https://linkedin.com/"
                 target="_blank"
-                class="w-10 h-10 rounded-xl glass-light flex items-center justify-center text-[#002e15]/20 hover:text-[#002e15] hover:bg-[#002e15]/[0.06] hover:border-[#002e15]/12 transition-all duration-300 bg-white/60"
-                ><i data-lucide="linkedin" class="w-4 h-4"></i
-              ></a>
+                class="w-10 h-10 rounded-xl bg-[#002e15] flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+              </a>
+
               <a
                 href="https://twitter.com/"
                 target="_blank"
-                class="w-10 h-10 rounded-xl glass-light flex items-center justify-center text-[#002e15]/20 hover:text-[#002e15] hover:bg-[#002e15]/[0.06] hover:border-[#002e15]/12 transition-all duration-300 bg-white/60"
-                ><i data-lucide="twitter" class="w-4 h-4"></i
-              ></a>
+                class="w-10 h-10 rounded-xl bg-[#002e15] flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
+                <i data-lucide="twitter" class="w-4 h-4"></i>
+              </a>
+
               <a
                 href="https://instagram.com/"
                 target="_blank"
-                class="w-10 h-10 rounded-xl glass-light flex items-center justify-center text-[#002e15]/20 hover:text-[#002e15] hover:bg-[#002e15]/[0.06] hover:border-[#002e15]/12 transition-all duration-300 bg-white/60"
-                ><i data-lucide="instagram" class="w-4 h-4"></i
-              ></a>
+                class="w-10 h-10 rounded-xl bg-[#002e15] flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+              </a>
             </div>
-          </div>
 
-          <!-- Right - Contact Cards -->
-          <div class="space-y-4 cont-el">
+            <!-- CTA Button -->
             <a
               href="mailto:your@email.com"
-              class="contact-card glass-light rounded-xl p-5 flex items-center gap-4 bg-white/60 block"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#002e15] text-white"
+            >
+              Start a Project
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+
+          <!-- Right Cards -->
+          <div class="lg:col-span-2 space-y-4 cont-el">
+            <!-- Email -->
+            <a
+              href="https://mail.google.com"
+              class="rounded-xl p-5 bg-[#002e15] shadow-lg flex items-center gap-4 block transition-all duration-300 hover:-translate-y-1"
             >
               <div
-                class="w-12 h-12 rounded-xl bg-[#002e15]/[0.05] flex items-center justify-center flex-shrink-0 border border-[#002e15]/[0.07]"
+                class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"
               >
-                <i data-lucide="mail" class="w-5 h-5 text-[#002e15]"></i>
+                <i data-lucide="mail" class="w-5 h-5 text-white"></i>
               </div>
+
               <div>
                 <p
-                  class="text-[10px] text-[#002e15]/30 uppercase tracking-[0.15em] mb-0.5"
+                  class="text-[10px] text-white/70 uppercase tracking-wider mb-0.5"
                 >
                   Email
                 </p>
-                <p class="text-sm text-[#002e15] font-medium">your@email.com</p>
+                <p class="text-sm text-white font-medium">000danianoor@email.com</p>
               </div>
+
               <i
                 data-lucide="arrow-up-right"
-                class="w-4 h-4 text-[#002e15]/20 ml-auto flex-shrink-0"
+                class="w-4 h-4 text-white/70 ml-auto flex-shrink-0"
               ></i>
             </a>
 
+            <!-- WhatsApp -->
             <a
-              href="tel:+923001234567"
-              class="contact-card glass-light rounded-xl p-5 flex items-center gap-4 bg-white/60 block"
-            >
-              <div
-                class="w-12 h-12 rounded-xl bg-[#002e15]/[0.05] flex items-center justify-center flex-shrink-0 border border-[#002e15]/[0.07]"
-              >
-                <i data-lucide="phone" class="w-5 h-5 text-[#002e15]"></i>
-              </div>
-              <div>
-                <p
-                  class="text-[10px] text-[#002e15]/30 uppercase tracking-[0.15em] mb-0.5"
-                >
-                  Phone
-                </p>
-                <p class="text-sm text-[#002e15] font-medium">
-                  +92 300 1234567
-                </p>
-              </div>
-              <i
-                data-lucide="arrow-up-right"
-                class="w-4 h-4 text-[#002e15]/20 ml-auto flex-shrink-0"
-              ></i>
-            </a>
-
-            <a
-              href="https://wa.me/923001234567"
+              href="https://www.whatsapp.com/"
               target="_blank"
-              class="contact-card glass-light rounded-xl p-5 flex items-center gap-4 bg-white/60 block"
+              class="rounded-xl p-5 bg-[#002e15] shadow-lg flex items-center gap-4 block transition-all duration-300 hover:-translate-y-1"
             >
               <div
-                class="w-12 h-12 rounded-xl bg-[#002e15]/[0.05] flex items-center justify-center flex-shrink-0 border border-[#002e15]/[0.07]"
+                class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"
               >
-                <i
-                  data-lucide="message-circle"
-                  class="w-5 h-5 text-[#002e15]"
-                ></i>
+                <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
               </div>
+
               <div>
                 <p
-                  class="text-[10px] text-[#002e15]/30 uppercase tracking-[0.15em] mb-0.5"
+                  class="text-[10px] text-white/70 uppercase tracking-wider mb-0.5"
                 >
                   WhatsApp
                 </p>
-                <p class="text-sm text-[#002e15] font-medium">
-                  +92 300 1234567
-                </p>
+                <p class="text-sm text-white font-medium">+92 335 541 6653</p>
               </div>
+
               <i
                 data-lucide="arrow-up-right"
-                class="w-4 h-4 text-[#002e15]/20 ml-auto flex-shrink-0"
+                class="w-4 h-4 text-white/70 ml-auto flex-shrink-0"
               ></i>
             </a>
 
+            <!-- GitHub -->
             <a
               href="https://github.com/"
               target="_blank"
-              class="contact-card glass-light rounded-xl p-5 flex items-center gap-4 bg-white/60 block"
+              class="rounded-xl p-5 bg-[#002e15] shadow-lg flex items-center gap-4 block transition-all duration-300 hover:-translate-y-1"
             >
               <div
-                class="w-12 h-12 rounded-xl bg-[#002e15]/[0.05] flex items-center justify-center flex-shrink-0 border border-[#002e15]/[0.07]"
+                class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"
               >
-                <i data-lucide="github" class="w-5 h-5 text-[#002e15]"></i>
+                <i data-lucide="github" class="w-5 h-5 text-white"></i>
               </div>
+
               <div>
                 <p
-                  class="text-[10px] text-[#002e15]/30 uppercase tracking-[0.15em] mb-0.5"
+                  class="text-[10px] text-white/70 uppercase tracking-wider mb-0.5"
                 >
                   GitHub
                 </p>
-                <p class="text-sm text-[#002e15] font-medium">
+                <p class="text-sm text-white font-medium">
                   github.com/introvert
                 </p>
               </div>
+
               <i
                 data-lucide="arrow-up-right"
-                class="w-4 h-4 text-[#002e15]/20 ml-auto flex-shrink-0"
+                class="w-4 h-4 text-white/70 ml-auto flex-shrink-0"
               ></i>
             </a>
-
+  
+            <!-- WhatsApp all subjects group -->
             <a
-              href="https://linkedin.com/"
+              href="https://chat.whatsapp.com/IjkqHA0NKdGBGiYfjfebTq"
               target="_blank"
-              class="contact-card glass-light rounded-xl p-5 flex items-center gap-4 bg-white/60 block"
+              class="rounded-xl p-5 bg-[#002e15] shadow-lg flex items-center gap-4 block transition-all duration-300 hover:-translate-y-1"
             >
               <div
-                class="w-12 h-12 rounded-xl bg-[#002e15]/[0.05] flex items-center justify-center flex-shrink-0 border border-[#002e15]/[0.07]"
+                class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"
               >
-                <i data-lucide="linkedin" class="w-5 h-5 text-[#002e15]"></i>
+                <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
               </div>
+
               <div>
                 <p
-                  class="text-[10px] text-[#002e15]/30 uppercase tracking-[0.15em] mb-0.5"
+                  class="text-[10px] text-white/70 uppercase tracking-wider mb-0.5"
                 >
-                  LinkedIn
+                  Whats App All subjects helping group 
                 </p>
-                <p class="text-sm text-[#002e15] font-medium">
-                  linkedin.com/in/introvert
+                <p class="text-sm text-white font-medium">
+                   For VU Students
                 </p>
               </div>
+
               <i
                 data-lucide="arrow-up-right"
-                class="w-4 h-4 text-[#002e15]/20 ml-auto flex-shrink-0"
+                class="w-4 h-4 text-white/70 ml-auto flex-shrink-0"
               ></i>
             </a>
+            <!-- WhatsApp all Tech projects -->
+            <a
+              href="https://chat.whatsapp.com/DIG0KKvDZzB836jcawXmcg"
+              target="_blank"
+              class="rounded-xl p-5 bg-[#002e15] shadow-lg flex items-center gap-4 block transition-all duration-300 hover:-translate-y-1"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"
+              >
+                <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
+              </div>
+
+              <div>
+                <p
+                  class="text-[10px] text-white/70 uppercase tracking-wider mb-0.5"
+                >
+                  Whats App Tech projects helping group 
+                </p>
+                <p class="text-sm text-white font-medium">
+                   For VU Students (CS519 / CS619)
+                </p>
+              </div>
+
+              <i
+                data-lucide="arrow-up-right"
+                class="w-4 h-4 text-white/70 ml-auto flex-shrink-0"
+              ></i>
+            </a>
+        
           </div>
         </div>
       </div>
+            
     </section>
 
+    <div class="divider max-w-6xl mx-auto"></div>
     <!-- ==================== FOOTER ==================== -->
-    <footer class="border-t border-[#002e15]/[0.05] py-10">
-      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <footer
+      class="relative bg-[#002e15] border-t border-white/10 py-12 overflow-hidden"
+    >
+      <!-- subtle glow background -->
+      <div class="absolute inset-0 opacity-20">
         <div
-          class="flex flex-col sm:flex-row items-center justify-between gap-4"
-        >
-          <div class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#002e15]/35"></span>
-            <span class="font-display text-base font-bold text-[#002e15]/60"
-              >Introvert</span
+          class="absolute w-96 h-96 bg-white/10 rounded-full blur-3xl -top-40 left-10"
+        ></div>
+        <div
+          class="absolute w-96 h-96 bg-white/5 rounded-full blur-3xl -bottom-40 right-10"
+        ></div>
+      </div>
+
+      <div class="relative max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="grid md:grid-cols-3 items-center gap-10">
+          <!-- Brand -->
+          <div class="flex items-center justify-center md:justify-start gap-2">
+            <i data-lucide="code-2" class="w-5 h-5 text-white"></i>
+            <span
+              class="font-display text-lg font-bold text-white tracking-tight"
             >
+              Introvert
+            </span>
           </div>
-          <p class="text-xs text-[#002e15]/18">
-            © 2025 — Built with silence & code.
-          </p>
-          <div class="flex items-center gap-4">
+
+          <!-- Middle text -->
+          <div class="text-center">
+            <p class="text-sm text-white/70 leading-relaxed">
+              Building clean, Attractive and professional interfaces for meaningful experiences & modern web
+              solutions.
+            </p>
+            <p class="text-[11px] text-white/40 mt-2">
+              © 2025 All rights reserved.
+            </p>
+          </div>
+
+          <!-- Social -->
+          <div class="flex justify-center md:justify-end items-center gap-3">
             <a
               href="https://github.com/"
               target="_blank"
-              class="text-[#002e15]/12 hover:text-[#002e15]/50 transition-colors"
-              ><i data-lucide="github" class="w-3.5 h-3.5"></i
-            ></a>
+              class="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-white/70 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+            >
+              <i data-lucide="github" class="w-4 h-4"></i>
+            </a>
+
             <a
               href="https://linkedin.com/"
               target="_blank"
-              class="text-[#002e15]/12 hover:text-[#002e15]/50 transition-colors"
-              ><i data-lucide="linkedin" class="w-3.5 h-3.5"></i
-            ></a>
+              class="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-white/70 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+            >
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+            </a>
+
             <a
               href="https://twitter.com/"
               target="_blank"
-              class="text-[#002e15]/12 hover:text-[#002e15]/50 transition-colors"
-              ><i data-lucide="twitter" class="w-3.5 h-3.5"></i
-            ></a>
+              class="w-10 h-10 rounded-full flex items-center justify-center border border-white/10 text-white/70 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+            >
+              <i data-lucide="twitter" class="w-4 h-4"></i>
+            </a>
           </div>
         </div>
-      </div>
-    </footer>
 
+   
+    </footer>
     <!-- ==================== SCRIPTS ==================== -->
     <script>
       lucide.createIcons();
